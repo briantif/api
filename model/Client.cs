@@ -9,6 +9,6 @@ namespace Model
         public int ClientId { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
-        public string pedidos { get; set; }
+        public string Pedidos { get; set; }
     }
 }

@@ -15,7 +15,5 @@ namespace Persistence
         { }
     }
 
-    public class ClientDbContext
-    {
-    }
+   
 }

@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Persistence;
+using Service;
 
 namespace api
 {
@@ -27,6 +28,8 @@ namespace api
         {
             var connection = Configuration.GetConnectionString("Dev");
             services.AddDbContext<ClientDbContext>(options => options.UseSqlServer(connection));
+
+            services.AddTransient<IClientService, ClientService>();
             services.AddMvc();
         }
 

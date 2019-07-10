@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Persistence;
 using Service;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace api
 {
@@ -29,6 +30,9 @@ namespace api
             var connection = Configuration.GetConnectionString("Dev");
             services.AddDbContext<ClientDbContext>(options => options.UseSqlServer(connection));
 
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1", new Info { Title = "Employee API", Version = "V1" });
+            });
             services.AddTransient<IClientService, ClientService>();
             services.AddMvc();
         }
@@ -36,6 +40,12 @@ namespace api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "post API V1");
+            });
+
             if (env.IsDevelopment())
             {
 

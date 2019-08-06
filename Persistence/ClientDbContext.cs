@@ -12,6 +12,8 @@ namespace Persistence
 
         public DbSet<Product> Product { get; set; }
 
+        public DbSet<Selling> Selling { get; set; }
+
 
         public ClientDbContext(DbContextOptions<ClientDbContext> options)
         : base(options)

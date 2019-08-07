@@ -8,31 +8,31 @@ using System.Text;
 
 namespace Service
 {
-    public interface IClientService
+    public interface IInventoyService
     {
-        IEnumerable<Client> GetAll();
-        Client Get(int id);
-        bool Add(Client model);
-        bool Update(Client model);
+        IEnumerable<Inventory> GetAll();
+        Inventory Get(int id);
+        bool Add(Inventory model);
+        bool Update(Inventory model);
         bool Delete(int id);
+
     }
 
-    public class ClientService : IClientService
+    public class InventoryService
     {
-        private readonly ClientDbContext _clientDbContext;
-       
 
-        public ClientService(ClientDbContext clientDbContext)
+        private readonly ClientDbContext _clientDbContext;
+        public InventoryService(ClientDbContext clientDbContext)
         {
             _clientDbContext = clientDbContext;
         }
-        public IEnumerable<Client> GetAll()
+        public IEnumerable<Inventory> GetAll()
         {
-            var result = new List<Client>();
+            var result = new List<Inventory>();
 
             try
             {
-                result = _clientDbContext.Client.ToList();
+                result = _clientDbContext.Inventory.ToList();
             }
             catch (System.Exception)
             {
@@ -41,13 +41,13 @@ namespace Service
 
             return result;
         }
-        public Client Get(int id)
+        public Inventory Get(int id)
         {
-            var result = new Client();
+            var result = new Inventory();
 
             try
             {
-                result = _clientDbContext.Client.Single(x => x.ClientId == id);
+                result = _clientDbContext.Inventory.Single(x => x.InventoryId == id);
             }
             catch (System.Exception)
             {
@@ -56,30 +56,32 @@ namespace Service
 
             return result;
         }
-        public bool Add(Client model)
+        public bool Add(Inventory model)
         {
             try
             {
                 _clientDbContext.Add(model);
                 _clientDbContext.SaveChanges();
             }
-            catch(System.Exception)
+            catch (System.Exception)
+
             {
                 return false;
             }
             return true;
         }
-        public bool Update(Client model)
+        public bool Update(Inventory model)
         {
             try
             {
-                var originalModel = _clientDbContext.Client.Single(x =>
-                    x.ClientId == model.ClientId
+                var originalModel = _clientDbContext.Inventory.Single(x =>
+                    x.InventoryId == model.InventoryId
                 );
 
-                originalModel.Name = model.Name;
-                originalModel.LastName = model.LastName;
-                originalModel.Pedidos = model.Pedidos;
+
+                originalModel.ProductID = model.ProductID;
+                originalModel.Quantity = model.Quantity
+;
                 _clientDbContext.Update(originalModel);
                 _clientDbContext.SaveChanges();
             }
@@ -93,7 +95,7 @@ namespace Service
         {
             try
             {
-                _clientDbContext.Entry(new Client { ClientId = id }).State = EntityState.Deleted; ;
+                _clientDbContext.Entry(new Inventory { InventoryId = id }).State = EntityState.Deleted; ;
                 _clientDbContext.SaveChanges();
             }
             catch (System.Exception)
@@ -103,5 +105,6 @@ namespace Service
 
             return true;
         }
+
     }
 }

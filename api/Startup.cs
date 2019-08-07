@@ -34,6 +34,9 @@ namespace api
                 c.SwaggerDoc("v1", new Info { Title = "Employee API", Version = "V1" });
             });
             services.AddTransient<IClientService, ClientService>();
+            services.AddTransient<IInventoryService, InventoryService>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ISellingService, SellingService>();
             services.AddMvc();
         }
 

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Service
 {
-    public interface IInventoyService
+    public interface IInventoryService
     {
         IEnumerable<Inventory> GetAll();
         Inventory Get(int id);
@@ -18,7 +18,7 @@ namespace Service
 
     }
 
-    public class InventoryService
+    public class InventoryService : IInventoryService
     {
 
         private readonly ClientDbContext _clientDbContext;

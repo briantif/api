@@ -11,10 +11,10 @@ namespace Service
     public interface IInventoryService
     {
         IEnumerable<Inventory> GetAll();
-        Inventory Get(int id);
+        Inventory Get(Guid id);
         bool Add(Inventory model);
         bool Update(Inventory model);
-        bool Delete(int id);
+        bool Delete(Guid id);
 
     }
 
@@ -41,7 +41,7 @@ namespace Service
 
             return result;
         }
-        public Inventory Get(int id)
+        public Inventory Get(Guid id)
         {
             var result = new Inventory();
 
@@ -91,7 +91,7 @@ namespace Service
             }
             return true;
         }
-        public bool Delete(int id)
+        public bool Delete(Guid id)
         {
             try
             {

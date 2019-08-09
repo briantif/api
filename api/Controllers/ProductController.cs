@@ -28,7 +28,7 @@ namespace api.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(Guid id)
         {
             return Ok(
               _productService.Get(id)
@@ -55,7 +55,7 @@ namespace api.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(Guid id)
         {
             return Ok(
                 _productService.Delete(id)

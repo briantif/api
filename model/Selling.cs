@@ -6,9 +6,9 @@ namespace Model
 {
     public class Selling
     {
-        public int SellingId { get; set; }
-        public int ClientId { get; set; }
-        public int ProductID { get; set; }
+        public Guid SellingId { get; set; }
+        public Guid ClientId { get; set; }
+        public Guid ProductID { get; set; }
         public string Total { get; set; }
     }
 }

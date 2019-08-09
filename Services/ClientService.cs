@@ -11,10 +11,10 @@ namespace Service
     public interface IClientService
     {
         IEnumerable<Client> GetAll();
-        Client Get(int id);
+        Client Get(Guid id);
         bool Add(Client model);
         bool Update(Client model);
-        bool Delete(int id);
+        bool Delete(Guid id);
     }
 
     public class ClientService : IClientService
@@ -41,7 +41,7 @@ namespace Service
 
             return result;
         }
-        public Client Get(int id)
+        public Client Get(Guid id)
         {
             var result = new Client();
 
@@ -89,7 +89,7 @@ namespace Service
             }
             return true;
         }
-        public bool Delete(int id)
+        public bool Delete(Guid id)
         {
             try
             {

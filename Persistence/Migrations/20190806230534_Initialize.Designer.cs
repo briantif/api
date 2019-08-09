@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistence;
+using System;
 
 namespace Persistence.Migrations
 {
@@ -22,7 +23,7 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Model.Client", b =>
                 {
-                    b.Property<int>("ClientId")
+                    b.Property<Guid>("ClientId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -39,11 +40,11 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Model.Inventory", b =>
                 {
-                    b.Property<int>("InventoryId")
+                    b.Property<Guid>("InventoryId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ProductID");
+                    b.Property<Guid>("ProductID");
 
                     b.Property<int>("Quantity");
 
@@ -54,7 +55,7 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Model.Product", b =>
                 {
-                    b.Property<int>("ProductId")
+                    b.Property<Guid>("ProductId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -71,13 +72,13 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Model.Selling", b =>
                 {
-                    b.Property<int>("SellingId")
+                    b.Property<Guid>("SellingId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ClientId");
+                    b.Property<Guid>("ClientId");
 
-                    b.Property<int>("ProductID");
+                    b.Property<Guid>("ProductID");
 
                     b.Property<string>("Total");
 

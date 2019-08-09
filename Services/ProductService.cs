@@ -12,10 +12,10 @@ namespace Service
     public interface IProductService
     {
         IEnumerable<Product> GetAll();
-        Product Get(int id);
+        Product Get(Guid id);
         bool Add(Product model);
         bool Update(Product model);
-        bool Delete(int id);
+        bool Delete(Guid id);
     }
     public class ProductService : IProductService
     {
@@ -40,7 +40,7 @@ namespace Service
 
             return result;
         }
-        public Product Get(int id)
+        public Product Get(Guid id)
         {
             var result = new Product();
 
@@ -88,7 +88,7 @@ namespace Service
             }
             return true;
         }
-        public bool Delete(int id)
+        public bool Delete(Guid id)
         {
             try
             {

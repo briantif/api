@@ -21,18 +21,20 @@ namespace api.Controllers
         [HttpGet]
         public IActionResult Get()
         {
+            var items = _clientService.GetAll();
             return Ok(
-               _clientService.GetAll()
+               items
             );
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(Guid id)
         {
+            var item = _clientService.Get(id);
             return Ok(
-              _clientService.Get(id)
-          );
+               item
+            );
         }
 
         // POST api/values
@@ -55,7 +57,7 @@ namespace api.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(Guid id)
         {
             return Ok(
                 _clientService.Delete(id)

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 
 namespace Persistence.Migrations
 {
@@ -11,7 +12,7 @@ namespace Persistence.Migrations
                 name: "Client",
                 columns: table => new
                 {
-                    ClientId = table.Column<int>(nullable: false)
+                    ClientId = table.Column<Guid>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
@@ -26,9 +27,9 @@ namespace Persistence.Migrations
                 name: "Inventory",
                 columns: table => new
                 {
-                    InventoryId = table.Column<int>(nullable: false)
+                    InventoryId = table.Column<Guid>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ProductID = table.Column<int>(nullable: false),
+                    ProductID = table.Column<Guid>(nullable: false),
                     Quantity = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -40,7 +41,7 @@ namespace Persistence.Migrations
                 name: "Product",
                 columns: table => new
                 {
-                    ProductId = table.Column<int>(nullable: false)
+                    ProductId = table.Column<Guid>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     Price = table.Column<int>(nullable: false),
@@ -55,10 +56,10 @@ namespace Persistence.Migrations
                 name: "Selling",
                 columns: table => new
                 {
-                    SellingId = table.Column<int>(nullable: false)
+                    SellingId = table.Column<Guid>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ClientId = table.Column<int>(nullable: false),
-                    ProductID = table.Column<int>(nullable: false),
+                    ClientId = table.Column<Guid>(nullable: false),
+                    ProductID = table.Column<Guid>(nullable: false),
                     Total = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

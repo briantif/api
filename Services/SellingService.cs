@@ -11,10 +11,10 @@ namespace Service
     public interface ISellingService
     {
         IEnumerable<Selling> GetAll();
-        Selling Get(int id);
+        Selling Get(Guid id);
         bool Add(Selling model);
         bool Update(Selling model);
-        bool Delete(int id);
+        bool Delete(Guid id);
     }
 
     public class SellingService : ISellingService
@@ -39,7 +39,7 @@ namespace Service
 
             return result;
         }
-        public Selling Get(int id)
+        public Selling Get(Guid id)
         {
             var result = new Selling();
 
@@ -89,7 +89,7 @@ namespace Service
             }
             return true;
         }
-        public bool Delete(int id)
+        public bool Delete(Guid id)
         {
             try
             {

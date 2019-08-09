@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api", "api\api.csproj", "{5F81DAED-B926-48F2-B635-FF5036F1597C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api", "api\api.csproj", "{5F81DAED-B926-48F2-B635-FF5036F1597C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Services\Service.csproj", "{115701B6-3EE3-433E-AF8C-3CA663CB25BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Services\Service.csproj", "{115701B6-3EE3-433E-AF8C-3CA663CB25BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "model\Model.csproj", "{81112FAE-4DB7-4C9E-BC59-C4CC81458028}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "model\Model.csproj", "{81112FAE-4DB7-4C9E-BC59-C4CC81458028}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{F7E40767-FAB1-4236-AB03-1ABF8534A6AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{F7E40767-FAB1-4236-AB03-1ABF8534A6AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "unitesting", "unitesting\unitesting.csproj", "{0375D257-C240-4E0E-804F-9EA04004EB7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F7E40767-FAB1-4236-AB03-1ABF8534A6AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7E40767-FAB1-4236-AB03-1ABF8534A6AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7E40767-FAB1-4236-AB03-1ABF8534A6AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0375D257-C240-4E0E-804F-9EA04004EB7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0375D257-C240-4E0E-804F-9EA04004EB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0375D257-C240-4E0E-804F-9EA04004EB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0375D257-C240-4E0E-804F-9EA04004EB7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

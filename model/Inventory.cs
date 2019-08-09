@@ -6,8 +6,8 @@ namespace Model
 {
     public class Inventory
     {
-        public int InventoryId { get; set; }
-        public int ProductID { get; set; }
+        public Guid InventoryId { get; set; }
+        public Guid ProductID { get; set; }
         public int Quantity { get; set; }
     }
 }
